@@ -1,0 +1,70 @@
+<h1>Movie details</h1>
+<div *ngIf="dataRecieved">
+  <table class="material">
+      <tr>
+        <th>Information</th> 
+        <th>Poster</th>
+      </tr>
+      <tr class="info">
+        <td >
+          <tr>
+              <th>Name</th>
+              <td class="name">{{details.title}}</td>
+          </tr>
+          <tr>
+              <th id="moviedescription">description</th>
+              <td class="desc">{{description}}</td>
+          </tr>
+          <tr>
+              <th>Geners</th>
+              <td>
+                <div *ngFor="let genere of movieGeners">
+                    {{genere.name}}
+                </div>
+              </td>
+          </tr>
+          <tr *ngIf="showMoreDetails">
+            <th>Cast</th>
+            <td>
+              <div *ngIf="!NoCasts">
+                <div *ngFor="let aCast of castList">
+                {{aCast.name}}
+                </div>
+              </div>
+              <div *ngIf="NoCasts">
+                this movie does not have cast names
+              </div>
+            </td>
+          </tr>
+        </td>
+        <!-- handling poster existance -->
+        <div *ngIf="posterPathCheck">
+          <td><img src={{posterPath}} height="300" width="200"></td>
+        </div>
+        <div *ngIf="!posterPathCheck">
+          <td>
+            {{posterPath}}          
+          </td>
+        </div>
+      </tr>
+    </table>
+</div>
+<div class="myButton">
+  <button type="button" class="btn btn-light" *ngIf="!showMoreDetails" (click)="showMore()">show More details</button>
+  <button type="button" class="btn btn-light" *ngIf="showMoreDetails" (click)="showLess()">show Less details</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div mat-dialog-actions>
+  <button type="button" class="btn btn-light" mat-button (click)="onNoClick()">close details</button>
+</div>

@@ -1,0 +1,18 @@
+<h1>My favorite List</h1>  
+<ngx-datatable class="material" [rows]="favoriteList" [headerHeight]="50" [footerHeight]="50" [limit]="10" [columnMode]="'force'" [rowHeight]="'auto'">
+  <ngx-datatable-column class="material" name="Movie Id">
+    <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+      {{row.id}}
+    </ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column name="Name">
+    <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+      {{row.title}}
+    </ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column name="remove">
+    <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+      <i class="material-icons grey md-36" (click)="removeFromFavorite(row.id)">close</i>
+    </ng-template>
+  </ngx-datatable-column>
+</ngx-datatable>

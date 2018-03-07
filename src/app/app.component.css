@@ -1,0 +1,20 @@
+.container {
+    background-color: grey;
+    padding: 15px;
+    margin-top: 10px;
+}
+
+h1 {
+    color: whitesmoke;
+}
+
+.material-icons.grey {
+     color: grey; 
+     font-size: 36px;
+     cursor: pointer;
+}
+
+#note {
+    color: whitesmoke;
+    font-size: 15px;
+}

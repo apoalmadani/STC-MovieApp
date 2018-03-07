@@ -1,0 +1,24 @@
+
+<h1>Similar Movies</h1>
+<div *ngIf="!noSimilar">
+  <ngx-datatable class=" similarTable material"  [rows]="similarMovies" [headerHeight]="50" [footerHeight]="50" [limit]="5" [columnMode]="'force'" [rowHeight]="'auto'">
+    <ngx-datatable-column class="material" name="Movie Id">
+      <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+        {{row.id}}
+      </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Name">
+      <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+        {{row.title}}
+      </ng-template>
+    </ngx-datatable-column>
+  </ngx-datatable> 
+</div>
+<div *ngIf="noSimilar">
+  <div class="alert alert-light" role="alert">
+    There are no similar movies to this one   
+  </div>
+</div>
+<div mat-dialog-actions>
+    <button mat-button type="button" class="btn btn-light" (click)="onNoClick()">close dialog</button>
+</div>

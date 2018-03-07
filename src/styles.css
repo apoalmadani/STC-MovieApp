@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@swimlane/ngx-datatable/release/index.css';
+@import '~@swimlane/ngx-datatable/release/themes/material.css';
+@import '~@swimlane/ngx-datatable/release/assets/icons.css';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body { 
+  font-family: Roboto, Arial, sans-serif;
+  margin: 150px;
+}
+
+.basic-container {
+  padding: 54px;
+}
+
+.version-info {
+  font-size: 8pt;
+}
+
+.mat-dialog-container {
+    width: 150% !important;
+    background-color: gray;
+}
+
+.myButton {
+  padding: 20px;
+}
